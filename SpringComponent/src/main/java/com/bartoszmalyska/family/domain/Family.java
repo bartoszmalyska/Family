@@ -8,10 +8,9 @@ import javax.persistence.Entity;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor
+@AllArgsConstructor
 @ToString @EqualsAndHashCode
 public class Family {
-    @Id @GeneratedValue
     private int id;
     private @NonNull Father father;
     private Child[] children;

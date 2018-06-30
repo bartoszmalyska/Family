@@ -8,10 +8,9 @@ import javax.persistence.Entity;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor
+@AllArgsConstructor
 @ToString @EqualsAndHashCode
 public class Child {
-    @Id @GeneratedValue
     private @NonNull String firstName;
     private @NonNull String pesel;
     private int id;

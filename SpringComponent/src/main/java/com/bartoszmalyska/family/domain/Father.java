@@ -9,10 +9,9 @@ import java.util.Date;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor
+@AllArgsConstructor
 @ToString @EqualsAndHashCode
 public class Father {
-    @Id @GeneratedValue
     private @NonNull Date birthDate;
     private @NonNull String firstName;
     private int id;
