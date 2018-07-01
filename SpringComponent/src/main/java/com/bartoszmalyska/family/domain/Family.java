@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @ToString @EqualsAndHashCode
 public class Family {
+    @Id @GeneratedValue
     private int id;
     private @NonNull Father father;
     private Child[] children;

@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 public class Child {
     private @NonNull String firstName;
     private @NonNull String pesel;
+    @Id @GeneratedValue
     private int id;
     private String secondName;
     private @NonNull String sex;

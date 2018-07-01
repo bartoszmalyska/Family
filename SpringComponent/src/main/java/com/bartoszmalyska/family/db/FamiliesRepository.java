@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-interface FamiliesRepository extends JpaRepository<Family, Long> {
+public interface FamiliesRepository extends JpaRepository<Family, Long> {
+    Family findFamilyById (int id);
 }

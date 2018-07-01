@@ -5,5 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-interface ChildrenRepository extends JpaRepository<Child, Long> {
+public interface ChildrenRepository extends JpaRepository<Child, Long> {
+    Child findChildById(int id);
+    Child findChildByPesel(String pesel);
 }

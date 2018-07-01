@@ -14,6 +14,7 @@ import java.util.Date;
 public class Father {
     private @NonNull Date birthDate;
     private @NonNull String firstName;
+    @Id @GeneratedValue
     private int id;
     private @NonNull String pesel;
     private String secondName;
