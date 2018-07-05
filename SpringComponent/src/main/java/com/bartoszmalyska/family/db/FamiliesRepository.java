@@ -1,10 +1,12 @@
 package com.bartoszmalyska.family.db;
 
 import com.bartoszmalyska.family.domain.Family;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.repository.CrudRepository;
 
-@RepositoryRestResource
-public interface FamiliesRepository extends JpaRepository<Family, Long> {
-    Family findFamilyById (int id);
+import java.util.List;
+
+
+@org.springframework.stereotype.Repository
+public interface FamiliesRepository extends CrudRepository<Family, Long> {
+    List<Family> findAllByLastName (String lastName);
 }

@@ -1,0 +1,26 @@
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+body {
+ font-family:  'Josefin Sans', sans-serif;
+ background-color: #e0e0d1;
+}
+
+#container
+{
+	width: 60%;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+.component
+{
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+}
+
+.footer
+{
+	margin: 2vh;
+	text-align: center;
+	font-size: 2vh;
+}

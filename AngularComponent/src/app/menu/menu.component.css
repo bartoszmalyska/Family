@@ -1,0 +1,17 @@
+#fam
+{
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	margin-left: 0.5vw;
+	flex: 1 1 auto;
+	font-family:  'Josefin Sans', sans-serif;
+	font-size: 5vh;
+}
+
+button
+{
+	width: 8vw;
+	margin: 0.2vw;
+	font-size: 0.9vw;
+	font-family: 'Lato', sans-serif;
+}

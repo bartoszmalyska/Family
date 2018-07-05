@@ -5,9 +5,11 @@ import com.bartoszmalyska.family.domain.Family;
 import com.bartoszmalyska.family.domain.Father;
 import com.bartoszmalyska.family.db.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class FamilyServiceImplementation implements FamilyService {
     @Autowired
     private FamiliesRepository familiesRepository;
@@ -16,58 +18,46 @@ public class FamilyServiceImplementation implements FamilyService {
     @Autowired
     private FathersRepository fathersRepository;
 
-    @Override
-    public void createFamily(Family family) {
 
+    @Override
+    public Family createFamily(Family family) {
+        return familiesRepository.save(family);
     }
 
     @Override
-    public void addFatherToFamily(Family family, Father father) {
-
+    public Father addFatherToFamily(Father father) {
+        return fathersRepository.save(father);
     }
 
     @Override
-    public void addChildToFamily(Family family, Child child) {
+    public Child addChildToFamily(Child child) {
+        return childrenRepository.save(child);
     }
 
     @Override
-    public Family readFamily(Family family) {
-        return readFamily(family.getId());
+    public Family readFamily(Long id) {
+        return familiesRepository.findById(Long.valueOf(id)).get();
     }
 
     @Override
-    public Family readFamily(int id) {
-        return familiesRepository.findFamilyById(id);
+    public List<Child> searchChild(Long id) {
+        return childrenRepository.findAllByFamilyId(id);
     }
 
     @Override
-    public Child searchChild(Child child) {
-        return searchChild(child.getId());
-    }
-
-    @Override
-    public Child searchChild(int id) {
-        return childrenRepository.findChildById(id);
-    }
-
-    @Override
-    public Child searchChild(String firstName, String pesel) {
-        return childrenRepository.findChildByPesel(pesel);
-    }
-
-    @Override
-    public Child searchChild(String pesel) {
-        return childrenRepository.findChildByPesel(pesel);
+    public Family findFamilyById(Long id) {
+        return familiesRepository.findById(id).get();
     }
 
     @Override
     public List<Family> findAllFamilies() {
-        return null;
+        return (List<Family>) familiesRepository.findAll();
     }
 
     @Override
-    public Family findFamilyById(int id) {
-        return familiesRepository.findFamilyById(id);
+    public Father readFather(Long familyId) {
+        return fathersRepository.findByFamilyId(familyId);
     }
+
 
 }

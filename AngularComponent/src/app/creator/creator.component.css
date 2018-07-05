@@ -1,0 +1,51 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  height: 20vh;
+}
+
+.formcard
+{
+	height: 20vh;
+	align-items: center;
+	display: flex;
+}
+
+.formfield1
+{
+	font-size: 3vh;
+	margin: 0 1.2vw;
+	width: 30%;
+
+}
+.formfield2
+{
+	
+	font-size: 2vh;
+	margin: 0 1.2vw;
+	width: 18%;
+
+}
+.formfield3
+{
+	font-size: 2vh;
+	margin: 0 0.5vw;
+	width: 15%;
+
+}
+
+button
+{
+	width: 7.2vw;
+	margin: 0 1.2vw;
+	font-size: 0.8vw;
+	font-family: 'Lato', sans-serif;
+	background-color: #666666;
+}
+
+.but3
+{
+	margin: 0 0.5vw;
+}

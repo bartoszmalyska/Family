@@ -1,19 +1,18 @@
 package com.bartoszmalyska.family.rest;
 
 import com.bartoszmalyska.family.domain.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface FamilyService {
-    void createFamily(Family family);
-    void addFatherToFamily(Family family, Father father);
-    void addChildToFamily(Family family, Child child);
-    Family readFamily(Family family);
-    Family readFamily(int id);
-    Child searchChild(Child child);
-    Child searchChild(int id);
-    Child searchChild(String firstName, String pesel);
-    Child searchChild(String pesel);
+    Family createFamily(Family family);
+    Father addFatherToFamily(Father father);
+    Child addChildToFamily(Child child);
+    Family readFamily(Long id);
+    List<Child> searchChild(Long id);
+    Family findFamilyById(Long id);
     List<Family> findAllFamilies();
-    Family findFamilyById(int id);
+    Father readFather(Long familyId);
 }

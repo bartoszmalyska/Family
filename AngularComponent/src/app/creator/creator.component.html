@@ -1,0 +1,69 @@
+<div id="container">
+	<div class="example-container">
+		<mat-card class="formcard">
+		  <mat-form-field class="formfield1">
+			<input [(ngModel)]="family.lastName" matInput  placeholder="Your Family's Last Name">
+		  </mat-form-field>
+
+		<button mat-raised-button (click)="createFamily()" >Add a father</button>
+		</mat-card>
+
+	</div>
+	<div class="example-container" *ngIf="this.showF" >
+		<mat-card class="formcard">
+		  <mat-form-field class="formfield2">
+			<input matInput [(ngModel)]="father.firstName" placeholder="First Name">
+		  </mat-form-field>
+
+		  <mat-form-field class="formfield2">
+			<input matInput [(ngModel)]="father.pesel" placeholder="Pesel">
+		  </mat-form-field>
+		  
+		  <mat-form-field class="formfield2">
+			<input matInput [(ngModel)]="father.secondName" placeholder="Second Name">
+		  </mat-form-field>
+		  
+		  <mat-form-field class="formfield2">
+			  <input matInput [(ngModel)]="father.birthDate" [matDatepicker]="picker" placeholder="Choose a birth date">
+			  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+			  <mat-datepicker #picker></mat-datepicker>
+		  </mat-form-field>
+		  
+		  <button mat-raised-button (click)="addFatherToFamily()">Add children</button>
+		</mat-card>
+
+	</div>
+	<div class="example-container" *ngIf="this.showC">
+		<mat-card class="formcard">
+		  <mat-form-field class="formfield3">
+			<input matInput [(ngModel)]="child.firstName" placeholder="First Name">
+		  </mat-form-field>
+
+		  <mat-form-field class="formfield3">
+			<input matInput [(ngModel)]="child.pesel" placeholder="Pesel">
+		  </mat-form-field>
+		  
+		  <mat-form-field class="formfield3">
+			<input matInput [(ngModel)]="child.secondName" placeholder="Second Name">
+		  </mat-form-field>
+		  
+		  <mat-form-field class="formfield3">
+			  <input matInput [(ngModel)]="child.birthDate" [matDatepicker]="picker" placeholder="Choose a birth date">
+			  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+			  <mat-datepicker #picker></mat-datepicker>
+		  </mat-form-field>
+					  
+		  <mat-form-field class="formfield3">
+			<mat-select [(ngModel)]="child.sex" placeholder="Sex">
+			  <mat-option value="male">Male</mat-option>
+			  <mat-option value="female">Female</mat-option>
+			  <mat-option value="other">Other</mat-option>
+			</mat-select>
+		  </mat-form-field>
+		  
+		  <button mat-raised-button (click)="addChildToFamily()" class="but3" >Add next</button>
+		  <button mat-raised-button class="but3" >Finish</button>
+		</mat-card>
+
+	</div>
+</div>

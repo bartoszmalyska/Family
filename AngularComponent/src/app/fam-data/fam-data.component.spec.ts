@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FatherCreatorComponent } from './father-creator.component';
+import { FamDataComponent } from './fam-data.component';
 
-describe('FatherCreatorComponent', () => {
-  let component: FatherCreatorComponent;
-  let fixture: ComponentFixture<FatherCreatorComponent>;
+describe('FamDataComponent', () => {
+  let component: FamDataComponent;
+  let fixture: ComponentFixture<FamDataComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FatherCreatorComponent ]
+      declarations: [ FamDataComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FatherCreatorComponent);
+    fixture = TestBed.createComponent(FamDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
