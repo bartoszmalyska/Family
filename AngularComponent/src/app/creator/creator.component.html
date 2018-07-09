@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div id="container">
 	<div class="example-container">
 		<mat-card class="formcard">
@@ -62,7 +63,7 @@
 		  </mat-form-field>
 		  
 		  <button mat-raised-button (click)="addChildToFamily()" class="but3" >Add next</button>
-		  <button mat-raised-button class="but3" >Finish</button>
+		  <button mat-raised-button class="but3" (click)="goTo('/data')">Finish</button>
 		</mat-card>
 
 	</div>

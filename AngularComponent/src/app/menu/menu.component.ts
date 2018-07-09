@@ -12,5 +12,15 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  public goTo(url) {
+    this.router.navigate([url]).then(e => {
+      if (e) {
+        console.log("Navigation is successful!");
+      } else {
+        console.log("Navigation has failed!");
+      }
+    });
+  }
 
 }

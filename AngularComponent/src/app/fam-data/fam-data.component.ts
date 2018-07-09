@@ -17,10 +17,12 @@ export class FamDataComponent implements OnInit {
 
   famModel: FamModel;
   displayedColumns: string[] = ['id','first_name','second_name','last_name','pesel','birth_date'];
+  displayedColumns2: string[] = ['id','first_name','second_name','pesel','birth_date','sex'];
 
 
   constructor(private router: Router, private familyService: FamilyService) { }
 
   ngOnInit() {
 	  this.familyService.readFamily(1).subscribe ( data => { this.famModel = data; });
+  }
 }

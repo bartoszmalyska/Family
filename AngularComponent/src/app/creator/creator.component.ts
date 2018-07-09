@@ -27,25 +27,33 @@ export class CreatorComponent implements OnInit {
 		this.familyService.createFamily(this.family)
 		.subscribe(data => {
 			alert("Family created succesfully.");
+			this.showF=true;
 		});
-		this.showF=true;
 	}
 	addFatherToFamily(): void {
-		this.father.familyId = this.family.id;
-		this.familyService.addFatherToFamily(this.father,this.family.id)
+		this.familyService.addFatherToFamily(this.father)
 		.subscribe(data => {
 			alert("Father added succesfully.");
+			this.showC=true;
 		});
-		this.showC=true;
 	}
 	addChildToFamily(): void {
-		this.child.familyId = this.family.id;
-		this.familyService.addChildToFamily(this.child,this.family.id)
+		this.familyService.addChildToFamily(this.child)
 		.subscribe(data => {
 			alert("Child added succesfully.");
 		});
 	}
-	
+	goTo(url)
+	{
+	this.addChildToFamily();
+	this.router.navigate([url]).then(e => {
+      if (e) {
+        console.log("Navigation is successful!");
+      } else {
+        console.log("Navigation has failed!");
+      }
+    });
+	}
 	ngOnInit() {
 	}
 

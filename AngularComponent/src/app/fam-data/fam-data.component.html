@@ -1,6 +1,7 @@
-  
+<app-menu></app-menu>  
 <div class="tables"> 
   <div class="cont">
+	<mat-card id="father">
 	  <table mat-table class="fam"[dataSource]="famModel">
 
 		<!-- Position Column -->
@@ -39,20 +40,22 @@
 		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 	  </table>
+	</mat-card>
   </div>
   <div class="cont">
+  <mat-card id="child">
   <table mat-table class="fam"[dataSource]="famModel">
 
 		<!-- Position Column -->
 		<ng-container matColumnDef="id">
 		  <th mat-header-cell *matHeaderCellDef> Id </th>
-		  <td mat-cell *matCellDef="let famModel"> {{famModel.family.id}} </td>
+		  <td mat-cell *matCellDef="let famModel"> {{famModel.children.id}} </td>
 		</ng-container>
 
 		<!-- Name Column -->
 		<ng-container matColumnDef="first_name">
 		  <th mat-header-cell *matHeaderCellDef> First Name </th>
-		  <td mat-cell *matCellDef="let famModel"> {{famModel.father.firstName}} </td>
+		  <td mat-cell *matCellDef="let famModel"> {{famModel.children.firstName}} </td>
 		</ng-container>
 		
 		<ng-container matColumnDef="second_name">
@@ -61,23 +64,24 @@
 		</ng-container>
 
 		
-		<ng-container matColumnDef="last_name">
-		  <th mat-header-cell *matHeaderCellDef> Last Name </th>
-		  <td mat-cell *matCellDef="let famModel"> {{famModel.family.lastName}} </td>
-		</ng-container>
-		
 		<ng-container matColumnDef="pesel">
 		  <th mat-header-cell *matHeaderCellDef> Pesel </th>
-		  <td mat-cell *matCellDef="let famModel"> {{famModel.father.pesel}} </td>
+		  <td mat-cell *matCellDef="let famModel"> {{famModel.children.pesel}} </td>
 		</ng-container>
 		
 		<ng-container matColumnDef="birth_date">
 		  <th mat-header-cell *matHeaderCellDef> Birth Date </th>
-		  <td mat-cell *matCellDef="let famModel"> {{famModel.father.birthDate}} </td>
+		  <td mat-cell *matCellDef="let famModel"> {{famModel.children.birthDate}} </td>
 		</ng-container>
 		
-		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		<ng-container matColumnDef="sex">
+		  <th mat-header-cell *matHeaderCellDef> Sex </th>
+		  <td mat-cell *matCellDef="let famModel"> {{famModel.children.sex}} </td>
+		</ng-container>
+		
+		<tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
 	  </table>
+  </mat-card>
   </div>
 </div>

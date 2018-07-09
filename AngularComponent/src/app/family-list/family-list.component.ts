@@ -15,9 +15,9 @@ import { FamModel } from '../shared/models/famModel.model';
 })
 export class FamilyListComponent implements OnInit {
 
-  famModel: FamModel;
-  dataSource = new MatTableDataSource(this.famModel);
-  displayedColumns: string[] = ['id','first_name','last_name','pesel','birth_date'];
+  family: FamModel[];
+  dataSource = new MatTableDataSource(this.family);
+  displayedColumns: string[] = ['id','first_name','second_name','pesel','birth_date'];
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -25,8 +25,7 @@ export class FamilyListComponent implements OnInit {
   constructor(private router: Router, private familyService: FamilyService) { }
 
   ngOnInit() {
-	  this.familyService.readFamily(1).subscribe ( data => { this.famModel = data; this.dataSource.data = this.famModel
-	  this.dataSource.paginator = this.paginator;
-  )};
+	  this.familyService.readFamily(1).subscribe ( data => { this.family = data; this.dataSource.data = this.family; this.dataSource.paginator = this.paginator });
+  }
 
 } 

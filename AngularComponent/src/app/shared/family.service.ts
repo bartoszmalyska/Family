@@ -21,14 +21,14 @@ export class FamilyService {
 		let familyString = 'http://localhost:4200/api/family/';
 		return this.http.post<Family>(familyString,family);
 	}
-	public addFatherToFamily(father,familyId)
+	public addFatherToFamily(father)
 	{
-		let fatherString = 'http://localhost:4200/api/family/' + familyId + '/father/';
+		let fatherString = 'http://localhost:4200/api/family/' + father.familyId + '/father/';
 		return this.http.post<Father>(fatherString,father);
 	}
-	public addChildToFamily(child, familyId)
+	public addChildToFamily(child)
 	{
-		let childString = 'http://localhost:4200/api/family/' + familyId + '/child/';
+		let childString = 'http://localhost:4200/api/family/' + child.familyId + '/child/';
 		return this.http.post<Child>(childString,child);
 	}
 	public listAllFamilies()
@@ -39,12 +39,12 @@ export class FamilyService {
 	public readFamily(id)
 	{
 		let familyString = 'http://localhost:4200/api/family/' + id;
-		return this.http.get<FamModel>(familyString);
+		return this.http.get<FamModel>(familyString,id);
 	}
-	public searchChild(id, familyId)
+	public searchChild(familyId)
 	{
-		let childString = 'http://localhost:4200/api/family/' + familyId + '/child/' + id + '/';
-		return this.http.get<Child>(childString, id);
+		let childString = 'http://localhost:4200/api/family/' + familyId + '/child/';
+		return this.http.get<Child[]>(childString, familyId);
 	}
 	
 }

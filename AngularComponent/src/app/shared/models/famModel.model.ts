@@ -1,5 +1,7 @@
 export class FamModel {
-	family: Family;
-	father: Father;
-	children: Child[];
+	id: number;
+	firstName: string;
+	lastName: string;
+	pesel: string;
+	birthDate: string;
 }

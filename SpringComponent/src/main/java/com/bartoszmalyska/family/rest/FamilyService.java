@@ -15,4 +15,5 @@ public interface FamilyService {
     Family findFamilyById(Long id);
     List<Family> findAllFamilies();
     Father readFather(Long familyId);
+    List<Child> readChild(Long id);
 }

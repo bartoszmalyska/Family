@@ -59,5 +59,10 @@ public class FamilyServiceImplementation implements FamilyService {
         return fathersRepository.findByFamilyId(familyId);
     }
 
+    @Override
+    public List<Child> readChild(Long id) {
+        return childrenRepository.findAllByFamilyId(id);
+    }
+
 
 }

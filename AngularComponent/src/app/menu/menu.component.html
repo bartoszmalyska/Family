@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row id="fam">
     <span id="fam">Family Database</span>
-	<button mat-raised-button>Create a family</button>
-	<button mat-raised-button>Family viewer</button>
-	<button mat-raised-button>Home</button>
+	<button mat-raised-button (click)="goTo('/create')">Create a family</button>
+	<button mat-raised-button (click)="goTo('/family')">Family viewer</button>
+	<button mat-raised-button (click)="goTo('/home')">Home</button>
   </mat-toolbar-row>
 </mat-toolbar>
